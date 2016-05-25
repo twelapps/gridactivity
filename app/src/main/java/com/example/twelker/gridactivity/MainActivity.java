@@ -73,40 +73,43 @@ public class MainActivity extends AppCompatActivity {
                     items.add(gridInput.getText().toString()); //Add the new item
                     switch (images.size()) { //Add appropriate image
                         case 0:
-                            images.add(R.drawable.rechthoek);
+                            images.add(R.drawable.oude_nokia);
                             break;
                         case 1:
-                            images.add(R.drawable.rechthoek_rood);
+                            images.add(R.drawable.samsung_galaxy_s5);
                             break;
                         case 2:
-                            images.add(R.drawable.rechthoek_blauw);
+                            images.add(R.drawable.samsung_galaxy_s7);
                             break;
                         case 3:
-                            images.add(R.drawable.rechthoek_geel);
+                            images.add(R.drawable.iphone_5s);
                             break;
                         case 4:
-                            images.add(R.drawable.rechthoek_groen);
+                            images.add(R.drawable.iphone_6s);
                             break;
                         case 5:
-                            images.add(R.drawable.rechthoek_paars);
+                            images.add(R.drawable.iphone_7);
                             break;
                         case 6:
-                            images.add(R.drawable.rechthoek_rood);
+                            images.add(R.drawable.samsung_galaxy_tab4);
                             break;
                         case 7:
-                            images.add(R.drawable.rechthoek_blauw);
+                            images.add(R.drawable.ipad_2);
                             break;
                         case 8:
-                            images.add(R.drawable.rechthoek_geel);
+                            images.add(R.drawable.ipad_3);
                             break;
                         case 9:
-                            images.add(R.drawable.rechthoek_groen);
+                            images.add(R.drawable.ipad_4);
                             break;
                         case 10:
-                            images.add(R.drawable.rechthoek_paars);
+                            images.add(R.drawable.iwatch);
+                            break;
+                        case 11:
+                            images.add(R.drawable.google_spectacles);
                             break;
                         default:
-                            images.add(R.drawable.rechthoek);
+                            images.add(R.mipmap.ic_launcher);
                     }
                     gridAdapter.notifyDataSetChanged(); //Redisplay the modified grid
                 } else {
