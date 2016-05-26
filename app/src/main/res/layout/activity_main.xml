@@ -39,4 +39,12 @@
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:layout_below="@+id/gridview"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/button" />
 </RelativeLayout>

@@ -9,9 +9,11 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.lang.reflect.Array;
@@ -33,6 +35,18 @@ public class MainActivity extends AppCompatActivity {
         GridView gridView = (GridView) findViewById(R.id.gridview);
         final EditText gridInput = (EditText) findViewById(R.id.gridinput);
         final Button button = (Button) findViewById(R.id.button);
+        final Spinner iconSpinner = (Spinner) findViewById(R.id.spinner);
+
+        //Create the spinner items
+        String[] spinnerItems = {"Nokia", "Galaxy S5", "Galaxy S7", "iPhone 5S", "iPhone 6S",
+                "iPhone 7", "Galaxy Tab4", "iPad 2", "iPad 3", "iPad 4",
+                "iWatch", "Spectacles", "Other"};
+
+        //Create the spinner adapter
+        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, spinnerItems);
+
+        //Set the adapter for the spinner
+        iconSpinner.setAdapter(spinnerAdapter);
 
         //Create the adapter (custom grid adapter is needed in this case) and connect it to the datamodel ('items')
         //An adapter is the link between datamodel and UI and ensures that datamodel is not involved in UI complexity v.v.
@@ -71,7 +85,9 @@ public class MainActivity extends AppCompatActivity {
                 //Check if the field has text
                 if (!TextUtils.isEmpty(gridInput.getText().toString())) {
                     items.add(gridInput.getText().toString()); //Add the new item
-                    switch (images.size()) { //Add appropriate image
+
+                    //Get the resource value for the selected icon from the spinner
+                    switch (iconSpinner.getSelectedItemPosition()) {
                         case 0:
                             images.add(R.drawable.oude_nokia);
                             break;
