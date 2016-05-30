@@ -69,10 +69,11 @@ public class MainActivity extends AppCompatActivity {
         //When an item is long clicked, remove it and display a toast message
         gridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() { @Override
             public boolean onItemLongClick(AdapterView<?> av, View v, int pos, long id) {
+                String removedItem = items.get(pos); //Keep the name of the item that was removed, for use in the toast msg
                 items.remove(pos); //Remove the item that was clicked long
                 images.remove(pos); //And remove the corresponding image
                 gridAdapter.notifyDataSetChanged(); //Redisplay the modified grid
-                Toast.makeText(MainActivity.this, "Grid item: " + pos + " removed.",
+                Toast.makeText(MainActivity.this, "Grid item: " + removedItem + " removed.",
                     Toast.LENGTH_SHORT).show();
                 return true; //Meaning no other routines will be invoked by Android
             }
